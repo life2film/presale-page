@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   background-color: #0b1c26; }
-  .header__link {
-    display: flex;
-    margin-left: 48px; }
+
+.header__link {
+  display: flex;
+  margin-left: 48px; }

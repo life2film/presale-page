@@ -2,3 +2,7 @@
   height: 100%;
   padding: 74px 0 93px;
   background-color: #fff; }
+  .main__title {
+    margin-bottom: 30px; }
+  .main__faq {
+    margin-bottom: 90px; }

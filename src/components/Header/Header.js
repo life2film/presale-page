@@ -2,8 +2,6 @@ import React from 'react';
 import Logo from '../Logo';
 import Link from '../Link';
 
-
-
 import './Header.css';
 
 const Header = () => {

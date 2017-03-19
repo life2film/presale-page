@@ -1,2 +1,11 @@
 .page {
-  font-size: 30px; }
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+.page__content {
+  display: flex;
+  flex: 1 0 auto; }
+
+.page__header, .page__footer {
+  flex: none; }

@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 import cx from 'classnames';
 
-import logo from '../../resources/logo.png';
-import logo_big from '../../resources/logo_big.png';
+import logo from '../../resources/images/logo.png';
+import logo_big from '../../resources/images/logo_big.png';
 
 import './Logo.css';
 

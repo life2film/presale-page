@@ -1,0 +1,29 @@
+.main {
+  height: 100%;
+  padding: 74px 0 93px;
+  background-color: #fff;
+
+  &__title {
+      margin-bottom: 30px;
+  }
+
+  &__faq {
+      margin-bottom: 90px;
+  }
+
+  &__finish {
+      width: 792px;
+      margin: 0 auto 74px;
+  }
+
+  &__info {
+      margin-bottom: 75px;
+      padding: 0 45px;
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  &__tokens {
+      width: 353px;
+  }
+}

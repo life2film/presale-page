@@ -8,6 +8,13 @@
 
 @font-face {
   font-family: 'Roboto';
+  src: url("../../resources/fonts/roboto-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'Roboto';
   src: url("../../resources/fonts/roboto-regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;

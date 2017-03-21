@@ -1,36 +1,38 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import { v4 } from 'node-uuid';
 
 import './Timer.css';
 
 
-export default class Timer extends Component {
+export default class Timer extends PureComponent {
     static propTypes = {
-        nums: PropTypes.object,
-        items: PropTypes.array
+        days: PropTypes.number,
+        hours: PropTypes.number,
+        minutes: PropTypes.number,
+        seconds: PropTypes.number,
+        units: PropTypes.array
     }
 
-    renderItem = (word) => {
-        const { nums } = this.props;
+    renderItem = (unit) => {
         return (
             <li
                 className="timer__item"
                 key={v4()}
             >
-                <div className="timer__circle">{nums[word]}</div>
-                <p className="timer__word">{word}</p>
+                <div className="timer__circle">{this.props[unit]}</div>
+                <p className="timer__word">{unit}</p>
             </li>
         )
     }
 
     render() {
-        const { nums, items } = this.props;
+        const { units} = this.props;
         return (
             <div className="timer">
                 <h4 className="timer__title">Time left:</h4>
                 <ul className="timer__list">
                     {
-                        items.map(this.renderItem)
+                        units.map(this.renderItem)
                     }
                 </ul>
             </div>

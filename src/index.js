@@ -1,8 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import * as reducers from './ducks';
 import App from './components/App';
 
+const store = createStore(
+  combineReducers({
+    ...reducers
+  }),
+  applyMiddleware(logger())
+);
+
+
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );

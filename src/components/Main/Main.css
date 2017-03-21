@@ -2,22 +2,17 @@
   height: 100%;
   padding: 74px 0 93px;
   background-color: #fff; }
-
-.main__title {
-  margin-bottom: 30px; }
-
-.main__faq {
-  margin-bottom: 90px; }
-
-.main__finish {
-  width: 792px;
-  margin: 0 auto 74px; }
-
-.main__info {
-  margin-bottom: 75px;
-  padding: 0 45px;
-  display: flex;
-  justify-content: space-between; }
-
-.main__tokens {
-  width: 353px; }
+  .main__title {
+    margin-bottom: 30px; }
+  .main__faq {
+    margin-bottom: 90px; }
+  .main__finish {
+    width: 792px;
+    margin: 0 auto 74px; }
+  .main__info {
+    margin-bottom: 75px;
+    padding: 0 45px;
+    display: flex;
+    justify-content: space-between; }
+  .main__tokens {
+    width: 353px; }

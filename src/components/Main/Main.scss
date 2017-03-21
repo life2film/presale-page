@@ -4,26 +4,56 @@
   background-color: #fff;
 
   &__title {
-      margin-bottom: 30px;
+    margin-bottom: 30px;
   }
 
   &__faq {
-      margin-bottom: 90px;
+    margin-bottom: 90px;
   }
 
   &__finish {
-      width: 792px;
-      margin: 0 auto 74px;
+    width: 792px;
+    margin: 0 auto 74px;
   }
 
   &__info {
-      margin-bottom: 75px;
-      padding: 0 45px;
-      display: flex;
-      justify-content: space-between;
+    margin-bottom: 75px;
+    padding: 0 45px;
+    display: flex;
+    justify-content: space-between;
   }
-  
+
   &__tokens {
-      width: 353px;
+    width: 353px;
+  }
+
+  &__address {
+    margin-bottom: 73px;
+    padding: 53px 152px 62px;
+    background-color: #ebebeb;
+  }
+
+  &__popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, .3);
+      content: '';
+    }
   }
 }

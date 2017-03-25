@@ -1,10 +1,26 @@
 import React, { PropTypes } from 'react';
 import Form from '../Form';
 import Spin from '../Spin';
+import Table from '../Table';
+import Success from '../Success';
 
 import './Transactions.css';
 
-const Transactions = ({ handleFormSubmit, handleAddressChange, address, loading, loaded, error, transactions }) => {
+const tableHead = ['Date', 'Ethereum amount', 'SONM tokens amount', 'Transaction status'];
+const links = [{
+    url: 'http://etherscan.io',
+    text: 'etherscan.io'
+},
+{
+    url: 'http://etherchain.org',
+    text: 'etherchain.org'
+},
+{
+    url: 'http://ethereumblocks.info',
+    text: 'ethereumblocks.info'
+}];
+
+const Transactions = ({ handleFormSubmit, handleAddressChange, address, loading, loaded, error, list }) => {
     return (
         <div className="transactions">
             <p className="transactions__title">Enter your Ethereum address used for the deposit to check your SNM tokens balance:</p>
@@ -26,17 +42,19 @@ const Transactions = ({ handleFormSubmit, handleAddressChange, address, loading,
                 error &&
                 <div className="transactions__error">Error. Please, try again later.</div>
             }
-            {/*{
-                error &&
-                <div className="transactions__error">Error</div>
-            }
-
             {
-                loaded && transactions && transactions.length &&
+                loaded && list && list.length &&
                 <div className="transactions__table">
-                    <Table />
+                    <p className="transactions__text">Transactions from your ETH address:</p>
+                    <Table
+                        head={tableHead}
+                        list={list}
+                    />
+                    <div className="transactions__success">
+                        <Success links={links} />
+                    </div>
                 </div>
-            }*/}
+            }
         </div>
     )
 };
@@ -48,7 +66,7 @@ Transactions.propTypes = {
     loading: PropTypes.bool,
     loaded: PropTypes.bool,
     error: PropTypes.bool,
-    transactions: PropTypes.array
+    list: PropTypes.array
 };
 
 export default Transactions;

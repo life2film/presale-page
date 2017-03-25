@@ -5,7 +5,7 @@ import Main from '../../components/Main';
 
 const mapStateToProps = state => {
     const { accepted: termsAccepted } = state.terms;
-    const { salesFinished } = state.sales;
+    const { finished: salesFinished } = state.sales;
 
     return { salesFinished, termsAccepted };
 };

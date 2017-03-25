@@ -24,4 +24,17 @@
         font-size: 18px;
         color: red;
     }
+    &__table {
+        width: 830px;
+        margin: 55px auto 0;
+    }
+    &__text {
+        margin: 0 0 35px;
+        text-align: left;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &__success {
+        margin-top: 65px;
+    }
 }

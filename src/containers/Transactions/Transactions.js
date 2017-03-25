@@ -3,12 +3,14 @@ import Transactions from '../../components/Transactions';
 import { setTransactionsValue, getTransactions } from '../../ducks/transactions';
 
 const mapStateToProps = state => {
-    const { address, loading, loaded, error } = state.transactions;
+    const { address, loading, loaded, error, list } = state.transactions;
 
     return {
         address,
         loading,
-        error
+        loaded,
+        error,
+        list
     };
 };
 const mapDispatchToProps = dispatch => ({

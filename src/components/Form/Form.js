@@ -14,6 +14,7 @@ const Form = ({ loading, address, handleSubmit, handleInputChange }) => (
             <Input
                 name="address"
                 disabled={loading}
+                onBlur={handleSubmit(address)}
                 onChange={handleInputChange}
             />
         </div>

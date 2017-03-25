@@ -30,7 +30,27 @@ export const getTransactions = address => dispatch => {
     dispatch(getTransactionsRequest());
     /**TODO - запилить реально АПИ, пока мок */
     const request = new Promise((resolve, reject) => {
-        setTimeout(() => reject(), 2000);
+        setTimeout(() => {
+            const list = [{
+                date: '01/04/2017 17:31',
+                eth: 100,
+                snm: 20000,
+                confirmed: true
+            },
+            {
+                date: '01/04/2017 17:31',
+                eth: 10012,
+                snm: 20000,
+                confirmed: false
+            },
+            {
+                date: '01/04/2017 17:31',
+                eth: 2001,
+                snm: 20000,
+                confirmed: true
+            }];
+            resolve(list);
+        }, 1000);
     });
 
     request

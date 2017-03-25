@@ -51,6 +51,7 @@ export default class Main extends PureComponent {
     render() {
         const { salesFinished, termsAccepted } = this.props;
         const { popupVisible } = this.state;
+        console.log(salesFinished);
         return (
             <main className="main">
                 <div className="main__title">
@@ -82,7 +83,7 @@ export default class Main extends PureComponent {
                             />
                         </div>
                         {
-                            //termsAccepted &&
+                            termsAccepted &&
                             <div className="main__steps">
                                 <Steps list={steps} />
                             </div>

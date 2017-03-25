@@ -7,10 +7,23 @@ import Tokens from '../Tokens';
 import Countdown from '../../containers/Countdown';
 import Address from '../Address';
 import Popup from '../Popup';
+import Steps from '../Steps';
+import Warning from '../Warning';
 
+import warning from '../../data/warning';
 import tokens from '../../data/tokens';
 
 import './Main.css';
+
+const steps = [
+    {
+        title: 'Send the desired ETH amount to presale smart contract address',
+        component: <Warning {...warning} />
+    },
+    {
+        title: 'After Ethereum transaction confirmation <br /> SNM tokens will be credited to your ETH address'
+    }
+]
 
 export default class Main extends PureComponent {
     state = {
@@ -65,6 +78,12 @@ export default class Main extends PureComponent {
                                 termsAccepted={termsAccepted}
                             />
                         </div>
+                        {
+                            // termsAccepted &&
+                            <div className="main__steps">
+                                <Steps list={steps} />
+                            </div>
+                        }
                     </div>
                 }
                 <div className="main__faq">

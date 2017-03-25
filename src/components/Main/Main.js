@@ -4,11 +4,13 @@ import Faq from '../Faq';
 import Ask from '../Ask';
 import Finish from '../Finish';
 import Tokens from '../Tokens';
-import Countdown from '../../containers/Countdown';
 import Address from '../Address';
 import Popup from '../Popup';
 import Steps from '../Steps';
 import Warning from '../Warning';
+
+import Countdown from '../../containers/Countdown';
+import Transactions from '../../containers/Transactions';
 
 import warning from '../../data/warning';
 import tokens from '../../data/tokens';
@@ -21,7 +23,8 @@ const steps = [
         component: <Warning {...warning} />
     },
     {
-        title: 'After Ethereum transaction confirmation <br /> SNM tokens will be credited to your ETH address'
+        title: 'After Ethereum transaction confirmation <br /> SNM tokens will be credited to your ETH address',
+        component: <Transactions />
     }
 ]
 
@@ -79,7 +82,7 @@ export default class Main extends PureComponent {
                             />
                         </div>
                         {
-                            // termsAccepted &&
+                            //termsAccepted &&
                             <div className="main__steps">
                                 <Steps list={steps} />
                             </div>

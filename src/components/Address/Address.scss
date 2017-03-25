@@ -2,7 +2,6 @@
   &__title {
     margin-bottom: 66px;
   }
-
   &__btn {
     width: 100%;
     height: 99px;
@@ -12,5 +11,9 @@
     cursor: pointer;
     color: #0b1c26;
     font-size: 18px;
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+    }
   }
 }

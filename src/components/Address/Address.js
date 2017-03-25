@@ -1,23 +1,33 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import Title from '../Title';
+import address from '../../data/address';
 
 import './Address.css';
 
 const Address = (props) => {
-    const { onBtnClick } = props;
+    const { text, title, termsAccepted, onBtnClick } = props;
+    const btnText = termsAccepted ? address : text;
     return (
         <div className="address">
             <div className="address__title">
-                <Title>SONM Presale smart contract address</Title>
+                <Title>{title}</Title>
             </div>
             <button
                 className="address__btn"
                 onClick={onBtnClick}
+                disabled={termsAccepted}
             >
-                Show SONM Presale deposit address
+                {btnText}
             </button>
         </div>
     )
+}
+
+Address.propTypes = {
+    text: PropTypes.string,
+    title: PropTypes.string,
+    termsAccepted: PropTypes.bool,
+    onBtnClick: PropTypes.func
 }
 
 export default Address;

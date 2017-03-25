@@ -6,12 +6,10 @@
   border-radius: 22px;
   border: none;
   background-color: #28d5d2; }
-
-.button:disabled {
-  opacity: .5;
-  pointer-events: none; }
-
-.button__text {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 400; }
+  .button:disabled {
+    opacity: .5;
+    pointer-events: none; }
+  .button__text {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400; }

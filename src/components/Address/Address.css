@@ -10,3 +10,7 @@
   cursor: pointer;
   color: #0b1c26;
   font-size: 18px; }
+
+.address__btn:disabled {
+  cursor: default;
+  pointer-events: none; }

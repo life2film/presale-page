@@ -1,10 +1,10 @@
-import React, {Component, PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
 import './Button.css';
 
-const Button = ({type, handleClick, text, disabled}) => {
+const Button = ({ type, handleClick, text, disabled }) => {
     return (
-        <button 
+        <button
             type={type}
             onClick={handleClick}
             className="button"

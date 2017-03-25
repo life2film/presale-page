@@ -8,7 +8,8 @@ import './Popup.css';
 export default class Popup extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-        onCloseClick: PropTypes.func
+        onCloseClick: PropTypes.func,
+        onBtnClick: PropTypes.func
     }
 
     state = {
@@ -17,30 +18,24 @@ export default class Popup extends Component {
 
     handleCheckboxChange = (e) => {
         const checked = e.target.checked;
-        this.setState({checked})
-    }
-
-    handleBtnClick = (e) => {
-        const { onCloseClick } = this.props;
-        e.preventDefault();
-        onCloseClick();
+        this.setState({ checked })
     }
 
     render() {
-        const { children, onCloseClick } = this.props;
-        const {checked} = this.state;
+        const { children, onCloseClick, onBtnClick } = this.props;
+        const { checked } = this.state;
 
         return (
             <div className="popup">
-                <button 
-                className="popup__close" 
-                onClick={onCloseClick}
+                <button
+                    className="popup__close"
+                    onClick={onCloseClick}
                 />
                 <h4 className="popup__title">Accept SONM presale terms to continue</h4>
                 <div className="popup__content">{children}</div>
                 <form action="#" className="popup__form">
                     <div className="popup__checkbox">
-                        <Checkbox 
+                        <Checkbox
                             id="terms"
                             name="terms"
                             value="terms"
@@ -51,9 +46,9 @@ export default class Popup extends Component {
                     <div className="popup__btn">
                         <Button
                             type="submit"
-                            text="Show me presale deposit address" 
+                            text="Show me presale deposit address"
                             disabled={!checked}
-                            handleClick={this.handleBtnClick}
+                            handleClick={onBtnClick}
                         />
                     </div>
                 </form>

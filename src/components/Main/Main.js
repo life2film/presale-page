@@ -3,7 +3,9 @@ import Title from '../Title';
 import Faq from '../Faq';
 import Ask from '../Ask';
 import Finish from '../Finish';
-import Tokens from '../Tokens';
+// import Tokens from '../Tokens';
+import Tokens from '../../containers/Tokens';
+
 import Address from '../Address';
 import Popup from '../Popup';
 import Steps from '../Steps';
@@ -54,12 +56,12 @@ export default class Main extends PureComponent {
         acceptTerms();
     }
 
-    componentDidMount() {
-        const { getBalance, salesFinished } = this.props;
-        if (!salesFinished) {
-            getBalance(address);
-        }
-    }
+    // componentDidMount() {
+    //     const { getBalance, salesFinished } = this.props;
+    //     if (!salesFinished) {
+    //         getBalance(address);
+    //     }
+    // }
 
     render() {
         const { salesFinished, termsAccepted, balanceLoaded, balance } = this.props;
@@ -81,8 +83,7 @@ export default class Main extends PureComponent {
                         <div className="main__info">
                             <div className="main__tokens">
                                 <Tokens
-                                    {...tokens}
-                                    balance={balance}
+
                                 />
                             </div>
                             <div className="main__timer">

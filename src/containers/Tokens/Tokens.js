@@ -15,10 +15,23 @@ const mapStateToProps = state => ({
 
 
 class Tokens extends Component {
+    state = {
+        timer: 0
+    }
+
     componentDidMount() {
         const { getBalance, finished } = this.props;
         if (!finished) {
             getBalance(address);
+            const timer = setInterval(() => getBalance(address), 20000);
+            this.setState({ timer });
+        }
+    }
+
+    componentWillUnmount() {
+        const { timer } = this.state;
+        if (timer) {
+            clearInterval(timer);
         }
     }
 

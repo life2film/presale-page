@@ -12,13 +12,22 @@ const Address = (props) => {
             <div className="address__title">
                 <Title>{title}</Title>
             </div>
-            <button
-                className="address__btn"
-                onClick={onBtnClick}
-                disabled={termsAccepted}
-            >
-                {btnText}
-            </button>
+            {
+                termsAccepted ?
+                    <span
+                        className="address__btn"
+                    >
+                        {btnText}
+                    </span>
+                    :
+                    <button
+                        className="address__btn address__btn_pointer"
+                        onClick={onBtnClick}
+                        disabled={termsAccepted}
+                    >
+                        {btnText}
+                    </button>
+            }
         </div>
     )
 }

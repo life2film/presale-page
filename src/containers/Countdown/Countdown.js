@@ -34,7 +34,7 @@ class Countdown extends PureComponent {
     }
 
     countDiff = (date) => {
-        const { finishSales } = this.props;
+        const { finishSales, salesFinished } = this.props;
         const { timer } = this.state;
         const now = moment();
         const parsedDate = moment(date, 'DD-MM-YYYY HH:mm:ss');
@@ -64,6 +64,11 @@ class Countdown extends PureComponent {
             const timer = setInterval(() => this.countDiff(deadline), TICK);
             this.setState({ timer });
         }
+    }
+
+    componentWillUnmount() {
+        const { timer } = this.state;
+        clearInterval(timer);
     }
 
     render() {

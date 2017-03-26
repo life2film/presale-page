@@ -1,9 +1,13 @@
+import { transactionsRequest } from '../utils/requests';
+import parseTransactions from '../utils/parseTransactions';
+import tokens from '../data/tokens';
+
 const initialState = {
     address: null,
     list: null,
     loading: false,
     loaded: false,
-    error: false
+    error: ''
 };
 
 export const SET_TRANSACTIONS_ADDRESS = 'SET_TRANSACTIONS_ADDRESS';
@@ -24,42 +28,32 @@ export const transactionsFullfilled = list => ({
         list
     }
 });
-export const transactionsRejected = () => ({ type: TRANSACTIONS_REJECTED });
+export const transactionsRejected = (error = 'Error. Please, try again later.') => ({ type: TRANSACTIONS_REJECTED, payload: { error } });
 
 export const getTransactions = address => dispatch => {
     dispatch(getTransactionsRequest());
-    /**TODO - запилить реально АПИ, пока мок */
-    const request = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const list = [{
-                date: '01/04/2017 17:31',
-                eth: 100,
-                snm: 20000,
-                confirmed: true
-            },
-            {
-                date: '01/04/2017 17:31',
-                eth: 10012,
-                snm: 20000,
-                confirmed: false
-            },
-            {
-                date: '01/04/2017 17:31',
-                eth: 2001,
-                snm: 20000,
-                confirmed: true
-            }];
-            resolve(list);
-        }, 1000);
-    });
 
-    request
-        .then(res => {
-            dispatch(transactionsFullfilled(res));
-        })
-        .catch(err => {
-            dispatch(transactionsRejected());
-        })
+    transactionsRequest(address).then(
+        res => {
+            const { result } = res.data;
+            const { course } = tokens;
+            if (result) {
+                if (result.length === 0) {
+                    dispatch(transactionsRejected('No transactions found'));
+                } else {
+                    const filteredTransactions = result.filter(item => item.from === address);
+                    if (filteredTransactions.length) {
+                        dispatch(transactionsFullfilled(parseTransactions(filteredTransactions, course)));
+                    } else {
+                        dispatch(transactionsRejected('No transactions found'));
+                    }
+                }
+            } else {
+                dispatch(transactionsRejected());
+            }
+        }
+    ).catch(() => dispatch(transactionsRejected()));
+
 };
 
 export default (state = initialState, action) => {
@@ -75,7 +69,7 @@ export default (state = initialState, action) => {
                 ...state,
                 loaded: false,
                 loading: true,
-                error: false
+                error: ''
             }
         case TRANSACTIONS_FULLFILLED:
             return {
@@ -88,7 +82,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                error: true
+                ...payload
             }
         default:
             return state

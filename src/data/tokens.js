@@ -1,4 +1,4 @@
 export default {
-    max: 12345,
-    course: 200
+    max: '1000000',
+    course: 606
 };

@@ -8,12 +8,15 @@ import Address from '../Address';
 import Popup from '../Popup';
 import Steps from '../Steps';
 import Warning from '../Warning';
+import Spin from '../Spin';
+
 
 import Countdown from '../../containers/Countdown';
 import Transactions from '../../containers/Transactions';
 
-import warning from '../../data/warning';
+import address from '../../data/address';
 import tokens from '../../data/tokens';
+import warning from '../../data/warning';
 
 import './Main.css';
 
@@ -36,7 +39,10 @@ export default class Main extends PureComponent {
     static propTypes = {
         salesFinished: PropTypes.bool,
         termsAccepted: PropTypes.bool,
-        acceptTerms: PropTypes.func
+        balanceLoaded: PropTypes.bool,
+        balance: PropTypes.string,
+        acceptTerms: PropTypes.func,
+        getBalance: PropTypes.func
     }
 
     togglePopup = () => this.setState({ popupVisible: !this.state.popupVisible })
@@ -48,8 +54,15 @@ export default class Main extends PureComponent {
         acceptTerms();
     }
 
+    componentDidMount() {
+        const { getBalance, salesFinished } = this.props;
+        if (!salesFinished) {
+            getBalance(address);
+        }
+    }
+
     render() {
-        const { salesFinished, termsAccepted } = this.props;
+        const { salesFinished, termsAccepted, balanceLoaded, balance } = this.props;
         const { popupVisible } = this.state;
         return (
             <main className="main">
@@ -67,7 +80,10 @@ export default class Main extends PureComponent {
                     <div className="main__wrapper">
                         <div className="main__info">
                             <div className="main__tokens">
-                                <Tokens {...tokens} sold={100} />
+                                <Tokens
+                                    {...tokens}
+                                    balance={balance}
+                                />
                             </div>
                             <div className="main__timer">
                                 <Countdown />
@@ -86,6 +102,9 @@ export default class Main extends PureComponent {
                             <div className="main__steps">
                                 <Steps list={steps} />
                             </div>
+                        }
+                        {
+                            !balance
                         }
                     </div>
                 }

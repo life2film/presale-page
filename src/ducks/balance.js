@@ -1,7 +1,7 @@
 import { balanceRequest } from '../utils/requests';
 
 const initialState = {
-    balance: null,
+    balance: '0',
     loading: false,
     loaded: false,
     error: false
@@ -24,9 +24,9 @@ export const getBalance = address => dispatch => {
     dispatch(getBalanceRequest());
     balanceRequest(address).then(
         res => {
-            const { data, status } = res;
-            if (status === 200 && data && data.length) {
-                dispatch(balanceFullfilled(data.result))
+            const { data: { result }, status } = res;
+            if (status === 200 && result && result.length) {
+                dispatch(balanceFullfilled(result))
             } else {
                 dispatch(balanceRejected());
             }
@@ -40,7 +40,6 @@ export default (state = initialState, action) => {
         case BALANCE_PENDING:
             return {
                 ...state,
-                loaded: false,
                 loading: true,
                 error: false
             }
@@ -55,6 +54,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
+                loaded: false,
                 error: true
             }
         default:

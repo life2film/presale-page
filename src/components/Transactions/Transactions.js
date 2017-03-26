@@ -40,7 +40,7 @@ const Transactions = ({ handleFormSubmit, handleAddressChange, address, loading,
             }
             {
                 error &&
-                <div className="transactions__error">Error. Please, try again later.</div>
+                <div className="transactions__error">{error}</div>
             }
             {
                 loaded && list && list.length &&
@@ -65,7 +65,7 @@ Transactions.propTypes = {
     address: PropTypes.string,
     loading: PropTypes.bool,
     loaded: PropTypes.bool,
-    error: PropTypes.bool,
+    error: PropTypes.string,
     list: PropTypes.array
 };
 

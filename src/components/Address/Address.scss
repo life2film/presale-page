@@ -2,10 +2,8 @@
   &__title {
     margin-bottom: 66px;
   }
-  &__btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  &__btn,
+  &__text {
     width: 100%;
     height: 99px;
     border: none;
@@ -13,6 +11,9 @@
     background-color: #ffffff;
     color: #0b1c26;
     font-size: 18px;
+    text-align: center;
+  }
+  &__btn {
     &_pointer {
       cursor: pointer;
     }
@@ -20,5 +21,10 @@
       cursor: default;
       pointer-events: none;
     }
+  }
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

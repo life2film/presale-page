@@ -15,7 +15,7 @@ const Address = (props) => {
             {
                 termsAccepted ?
                     <span
-                        className="address__btn"
+                        className="address__text"
                     >
                         {btnText}
                     </span>

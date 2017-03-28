@@ -24,8 +24,8 @@
     width: 8px;
     height: 16px;
     transform: rotate(-145deg);
-    border-top: 1px solid #cccccc;
-    border-left: 1px solid #cccccc; }
+    border-top: 2px solid #17d2ce;
+    border-left: 2px solid #17d2ce; }
 
 .checkbox__native {
   position: absolute;

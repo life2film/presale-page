@@ -18,7 +18,7 @@ const Tokens = ({ balance, max, course }) => (
                 </div>
             </div>
         </div>
-        <p className="tokens__course">Presale SNM tokens price: 1 ETH = {course}</p>
+        <p className="tokens__course">Presale SNM tokens price: 1 ETH = {course} SNM</p>
     </div>
 );
 

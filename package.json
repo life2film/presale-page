@@ -6,6 +6,7 @@
     "axios": "^0.15.3",
     "classnames": "^2.2.5",
     "moment": "^2.18.0",
+    "moment-timezone": "^0.5.11",
     "node-sass": "^4.5.0",
     "node-uuid": "^1.4.7",
     "normalize.css": "^5.0.0",

@@ -2,7 +2,7 @@ export default [
     {
         icon: 'reddit.png',
         text: 'Reddit',
-        url: 'javascript:void(0)'
+        url: 'http://ya.ru'
     },
     {
         icon: 'bitcoin.png',

@@ -1,6 +1,6 @@
 import React, { PropTypes, PureComponent } from 'react';
 import Timer from '../../components/Timer';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { connect } from 'react-redux'
 import { finishSales } from '../../ducks/sales';
 import deadline from '../../data/deadline';
@@ -12,6 +12,12 @@ const TICK = 1000;
 const mapStateToProps = state => ({
     salesFinished: state.sales.finished
 });
+
+const getCorrectNow = now => {
+    const utcOffset = now.utcOffset() / 60;
+    const formattedNow = utcOffset > 0 ? now.subtract(utcOffset, 'hours') : now.add(utcOffset, 'hours');
+    return formattedNow;
+}
 
 
 class Countdown extends PureComponent {
@@ -27,8 +33,14 @@ class Countdown extends PureComponent {
         seconds: 0
     }
 
+    getCorrectNow = now => {
+        const utcOffset = now.utcOffset() / 60;
+        const formattedNow = utcOffset > 0 ? now.subtract(utcOffset, 'hours') : now.add(utcOffset, 'hours');
+        return formattedNow;
+    }
+
     isDeadlineExpired = (date) => {
-        const now = moment();
+        const now = this.getCorrectNow(moment()); // ставить дату не по компу а по 0
         const parsedDate = moment(date, 'DD-MM-YYYY HH:mm:ss');
         return parsedDate.isBefore(now);
     }
@@ -36,7 +48,7 @@ class Countdown extends PureComponent {
     countDiff = (date) => {
         const { finishSales, salesFinished } = this.props;
         const { timer } = this.state;
-        const now = moment();
+        const now = this.getCorrectNow(moment());
         const parsedDate = moment(date, 'DD-MM-YYYY HH:mm:ss');
 
         if (this.isDeadlineExpired(date)) {

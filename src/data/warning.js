@@ -3,8 +3,6 @@ export default {
     text: [
         'Do not send eth to presale address from any cryptocurrency exchange!',
         '<b>if you send eth from exchange, you won\'t have access to your snm tokens.</b>',
-        'If you don\'t know how to install your own Ethereum wallet - <a href="http://ya.ru">check the FAQ</a> before the deposit.'
+        'If you don\'t know how to install your own Ethereum wallet - <a href="#faq">check the FAQ</a> before the deposit.'
     ]
 };
-
-/**TODO - ссылка на FAQ */

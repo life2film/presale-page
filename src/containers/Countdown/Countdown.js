@@ -3,27 +3,34 @@ import Timer from '../../components/Timer';
 import moment from 'moment-timezone';
 import { connect } from 'react-redux'
 import { finishSales } from '../../ducks/sales';
+import { getTime } from '../../ducks/time';
 import deadline from '../../data/deadline';
 
 const units = ['days', 'hours', 'minutes', 'seconds'];
 
 const TICK = 1000;
 
-const mapStateToProps = state => ({
-    salesFinished: state.sales.finished
-});
-
-const getCorrectNow = now => {
-    const utcOffset = now.utcOffset() / 60;
-    const formattedNow = utcOffset > 0 ? now.subtract(utcOffset, 'hours') : now.add(utcOffset, 'hours');
-    return formattedNow;
-}
+const mapStateToProps = state => {
+    const { format, timeZone } = deadline;
+    const { finished: salesFinished } = state.sales;
+    const { time, loading: timeLoading, loaded: timeLoaded, error: timeError } = state.time;
+    return {
+        salesFinished,
+        timeLoading,
+        timeLoaded,
+        timeError,
+        time: time && moment.tz(time, format, timeZone)
+    }
+};
 
 
 class Countdown extends PureComponent {
     static propTypes = {
         salesFinished: PropTypes.bool,
-        finishSales: PropTypes.func
+        timeLoading: PropTypes.bool,
+        timeLoaded: PropTypes.bool,
+        finishSales: PropTypes.func,
+        getTime: PropTypes.func
     }
 
     state = {
@@ -33,29 +40,23 @@ class Countdown extends PureComponent {
         seconds: 0
     }
 
-    getCorrectNow = now => {
-        const utcOffset = now.utcOffset() / 60;
-        const formattedNow = utcOffset > 0 ? now.subtract(utcOffset, 'hours') : now.add(utcOffset, 'hours');
-        return formattedNow;
-    }
-
-    isDeadlineExpired = (date) => {
-        const now = this.getCorrectNow(moment()); // ставить дату не по компу а по 0
-        const parsedDate = moment(date, 'DD-MM-YYYY HH:mm:ss');
+    isDeadlineExpired = (date, now) => {
+        const { format, timeZone } = deadline;
+        const parsedDate = moment.tz(date, format, timeZone);
         return parsedDate.isBefore(now);
     }
 
-    countDiff = (date) => {
+    countDiff = (date, now) => {
         const { finishSales, salesFinished } = this.props;
         const { timer } = this.state;
-        const now = this.getCorrectNow(moment());
-        const parsedDate = moment(date, 'DD-MM-YYYY HH:mm:ss');
+        const { format, timeZone } = deadline;
+        const parsedDate = moment.tz(date, format, timeZone);
 
         if (this.isDeadlineExpired(date)) {
             clearInterval(timer);
             finishSales();
         } else {
-            const diff = parsedDate.diff(now);
+            const diff = parsedDate.diff(now.add(1000, 'milliseconds'));
             const duration = moment.duration(diff, 'milliseconds');
             this.setState({
                 days: Math.floor(duration.asDays()),
@@ -66,15 +67,26 @@ class Countdown extends PureComponent {
         }
     }
 
-    componentDidMount() {
-        const { finishSales } = this.props;
+    componentWillMount() {
+        const { getTime } = this.props;
+        const { timeZone } = deadline;
 
-        if (this.isDeadlineExpired(deadline)) {
-            finishSales();
-        } else {
-            this.countDiff(deadline);
-            const timer = setInterval(() => this.countDiff(deadline), TICK);
-            this.setState({ timer });
+        getTime(timeZone);
+    }
+
+    componentDidUpdate() {
+        const { time, finishSales, getTime } = this.props;
+        const { timer } = this.state;
+        const { end, timeZone } = deadline;
+
+        if (!timer && time) {
+            if (this.isDeadlineExpired(end, time)) {
+                finishSales();
+            } else {
+                this.countDiff(end, time);
+                const timer = setInterval(() => this.countDiff(end, time), TICK);
+                this.setState({ timer });
+            }
         }
     }
 
@@ -84,10 +96,13 @@ class Countdown extends PureComponent {
     }
 
     render() {
+        const { timeLoading, timeLoaded, timeError } = this.props;
         return (
             <Timer
                 {...this.state}
                 units={units}
+                loading={timeLoading && !timeLoaded}
+                error={timeError}
             />
         );
     }
@@ -95,5 +110,5 @@ class Countdown extends PureComponent {
 
 export default connect(
     mapStateToProps,
-    { finishSales }
+    { finishSales, getTime }
 )(Countdown);

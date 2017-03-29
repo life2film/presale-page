@@ -5,6 +5,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk'
 import balanceMiddleware from './middlewares/balance';
+import timeMiddleware from './middlewares/time';
 import * as reducers from './ducks';
 import App from './components/App';
 
@@ -15,7 +16,8 @@ const store = createStore(
   applyMiddleware(
     thunk,
     logger(),
-    balanceMiddleware
+    balanceMiddleware,
+    timeMiddleware
   )
 );
 

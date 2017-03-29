@@ -1,25 +1,27 @@
 .timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   text-align: center;
-
+  &__error {
+    color: red;
+  }
   &__title {
     margin: 0 0 27px;
     color: #0b1c26;
     font-size: 23px;
     font-weight: 700;
   }
-
   &__list {
     padding: 0;
     margin: 0;
     list-style: none;
     display: flex;
   }
-
   &__item:not(:last-child) {
     padding-right: 54px;
   }
-
-
   &__circle {
     position: relative;
     display: flex;
@@ -32,7 +34,6 @@
     color: #fff;
     background-color: #17d2ce;
     border-radius: 50%;
-
     &:after {
       position: absolute;
       top: 50%;
@@ -44,13 +45,11 @@
       font-weight: 300;
       line-height: 23px;
       content: ':';
-
       .timer__item:last-child & {
-          content: none;
+        content: none;
       }
     }
   }
-
   &__word {
     margin: 12px 0 0;
     font-size: 13px;

@@ -3,16 +3,16 @@ import Title from '../Title';
 import Faq from '../Faq';
 import Ask from '../Ask';
 import Finish from '../Finish';
-// import Tokens from '../Tokens';
-import Tokens from '../../containers/Tokens';
-
 import Address from '../Address';
 import Popup from '../Popup';
 import Steps from '../Steps';
 import Warning from '../Warning';
 import Spin from '../Spin';
 
+import cx from 'classnames';
 
+
+import Tokens from '../../containers/Tokens';
 import Countdown from '../../containers/Countdown';
 import Transactions from '../../containers/Transactions';
 
@@ -45,7 +45,8 @@ export default class Main extends PureComponent {
         balanceLoaded: PropTypes.bool,
         balance: PropTypes.string,
         acceptTerms: PropTypes.func,
-        getBalance: PropTypes.func
+        getBalance: PropTypes.func,
+        timeLoading: PropTypes.bool
     }
 
     togglePopup = () => this.setState({ popupVisible: !this.state.popupVisible })
@@ -57,18 +58,11 @@ export default class Main extends PureComponent {
         acceptTerms();
     }
 
-    // componentDidMount() {
-    //     const { getBalance, salesFinished } = this.props;
-    //     if (!salesFinished) {
-    //         getBalance(address);
-    //     }
-    // }
-
     render() {
-        const { salesFinished, termsAccepted, balanceLoaded, balance } = this.props;
+        const { salesFinished, termsAccepted, balanceLoaded, balance, timeLoading } = this.props;
         const { popupVisible } = this.state;
         return (
-            <main className="main">
+            <main className={cx('main', { main_loading: timeLoading })}>
                 <div className="main__title">
                     <Title size="big">SONM tokens presale</Title>
                 </div>
@@ -110,7 +104,7 @@ export default class Main extends PureComponent {
                         }
                     </div>
                 }
-                <div className="main__faq">
+                <div id="faq" className="main__faq">
                     <Faq />
                 </div>
                 <div className="main__ask">

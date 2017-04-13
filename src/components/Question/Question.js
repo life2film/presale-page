@@ -20,14 +20,14 @@ export default class Question extends Component {
                 <div
                     className="question__toggle"
                     onClick={() => onItemClick(id)}
-                >
-                    {text}
-                </div>
+                    dangerouslySetInnerHTML={{ __html: text }}
+                />
                 {
                     opened &&
-                    <div className="question__popup">
-                        {popup}
-                    </div>
+                    <div
+                        className="question__popup"
+                        dangerouslySetInnerHTML={{ __html: popup }}
+                    />
                 }
             </div>
         );

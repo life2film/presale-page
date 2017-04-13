@@ -12,8 +12,9 @@
       left: 0;
       right: 0;
       content: '';
-      background: rgba(255, 255, 255, .9);
+      background: rgba(255, 255, 255, .9)
     }
+
     &:after {
       position: fixed;
       z-index: 101;
@@ -37,6 +38,7 @@
       }
     }
   }
+
   &__title {
     margin-bottom: 30px;
   }

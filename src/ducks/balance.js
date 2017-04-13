@@ -42,21 +42,21 @@ export default (state = initialState, action) => {
                 ...state,
                 loading: true,
                 error: false
-            }
+            };
         case BALANCE_FULLFILLED:
             return {
                 ...state,
                 loading: false,
                 loaded: true,
                 ...payload
-            }
+            };
         case BALANCE_REJECTED:
             return {
                 ...state,
                 loading: false,
                 loaded: false,
                 error: true
-            }
+            };
         default:
             return state
     }

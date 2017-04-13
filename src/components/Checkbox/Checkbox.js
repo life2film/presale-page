@@ -21,7 +21,7 @@ const Checkbox = ({ id, name, label, value, handleChange }) => {
             </label>
         </div>
     )
-}
+};
 
 Checkbox.propTypes = {
     id: PropTypes.string,

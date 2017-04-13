@@ -13,7 +13,7 @@ const renderHeadItem = item => (
     </th>
 );
 
-const renderRow = (item) => <Row key={v4()} {...item} />
+const renderRow = (item) => <Row key={v4()} {...item} />;
 
 const Table = ({ head, list }) => {
     return (
@@ -30,7 +30,7 @@ const Table = ({ head, list }) => {
             </tbody>
         </table>
     )
-}
+};
 
 Table.propTypes = {
     head: PropTypes.array,

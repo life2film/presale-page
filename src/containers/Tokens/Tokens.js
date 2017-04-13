@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
 class Tokens extends Component {
     state = {
         timer: 0
-    }
+    };
 
     componentDidMount() {
         const { getBalance, finished } = this.props;

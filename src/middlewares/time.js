@@ -10,7 +10,7 @@ export default store => next => action => {
         const { payload: { time } } = action;
         const { end, timeZone, format } = deadline;
         const parsedTime = moment.tz(time, format, timeZone);
-        const parsedEnd = moment.tz(end, format, timeZone)
+        const parsedEnd = moment.tz(end, format, timeZone);
 
         if (parsedEnd.isBefore(parsedTime)) {
             dispatch(finishSales());

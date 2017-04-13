@@ -15,7 +15,7 @@ export default class Timer extends PureComponent {
         units: PropTypes.array,
         loading: PropTypes.bool,
         error: PropTypes.bool
-    }
+    };
 
     renderItem = (unit) => {
         return (
@@ -27,7 +27,7 @@ export default class Timer extends PureComponent {
                 <p className="timer__word">{unit}</p>
             </li>
         )
-    }
+    };
 
     render() {
         const { units, loading, error } = this.props;

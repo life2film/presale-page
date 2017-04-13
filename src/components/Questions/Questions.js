@@ -7,16 +7,16 @@ import './Questions.css';
 export default class Questions extends PureComponent {
     static propTypes = {
         list: PropTypes.array
-    }
+    };
 
     state = {
         openedId: null
-    }
+    };
 
     handleItemClick = id => {
         const {openedId} = this.state;
         this.setState({ openedId: id === openedId ? null : id })
-    }
+    };
 
     renderItem = (item, id) => {
         const { text, popup } = item;
@@ -35,7 +35,7 @@ export default class Questions extends PureComponent {
                 />
             </li>
         )
-    }
+    };
 
     render() {
         const { list } = this.props;

@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 accepted: true
-            }
+            };
         default:
             return state
     }

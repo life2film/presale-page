@@ -28,7 +28,7 @@ export const transactionsRequest = address => (
             apikey: ETHERSCAN_API_KEY
         }
     })
-)
+);
 
 export const timeRequest = timezone => (
     axios.get(TIMEDB_URL, {
@@ -39,5 +39,5 @@ export const timeRequest = timezone => (
             zone: timezone
         }
     })
-)
+);
 

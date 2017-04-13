@@ -21,10 +21,10 @@ const Logo = ({ big }) => {
 
 Logo.defaultProps = {
     big: false
-}
+};
 
 Logo.propTypes = {
     big: PropTypes.bool
-}
+};
 
 export default Logo;

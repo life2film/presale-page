@@ -7,22 +7,22 @@ import './Popup.css';
 
 export default class Popup extends Component {
     static propTypes = {
-        children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
         onCloseClick: PropTypes.func,
-        onBtnClick: PropTypes.func
-    }
+        onBtnClick: PropTypes.func,
+        content: PropTypes.string
+    };
 
     state = {
         checked: false
-    }
+    };
 
     handleCheckboxChange = (e) => {
         const checked = e.target.checked;
         this.setState({ checked })
-    }
+    };
 
     render() {
-        const { children, onCloseClick, onBtnClick } = this.props;
+        const { content, onCloseClick, onBtnClick } = this.props;
         const { checked } = this.state;
 
         return (
@@ -32,7 +32,10 @@ export default class Popup extends Component {
                     onClick={onCloseClick}
                 />
                 <h4 className="popup__title">Accept SONM presale terms to continue</h4>
-                <div className="popup__content">{children}</div>
+                <div
+                    className="popup__content"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                />
                 <form action="#" className="popup__form">
                     <div className="popup__checkbox">
                         <Checkbox

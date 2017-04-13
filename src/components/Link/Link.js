@@ -11,15 +11,15 @@ const Link = ({ url, text }) => {
             {text}
         </a>
     )
-}
+};
 
 Link.defaultProps = {
     url: '/'
-}
+};
 
 Link.propTypes = {
     url: PropTypes.string,
     text: PropTypes.string
-}
+};
 
 export default Link;

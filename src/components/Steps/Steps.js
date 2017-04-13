@@ -28,6 +28,6 @@ const Steps = ({ list }) => {
 
 Steps.propTypes = {
     list: PropTypes.arrayOf(PropTypes.object)
-}
+};
 
 export default Steps; 

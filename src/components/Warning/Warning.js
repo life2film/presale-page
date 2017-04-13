@@ -12,7 +12,7 @@ const renderText = (item, num, items) => {
             dangerouslySetInnerHTML={{ __html: item }}
         />
     )
-}
+};
 
 const Warning = ({ title, text }) => (
     <div className="warning">

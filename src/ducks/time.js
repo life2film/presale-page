@@ -42,21 +42,21 @@ export default (state = initialState, action) => {
                 ...state,
                 loading: true,
                 error: false
-            }
+            };
         case TIME_FULLFILLED:
             return {
                 ...state,
                 loading: false,
                 loaded: true,
                 ...payload
-            }
+            };
         case TIME_REJECTED:
             return {
                 ...state,
                 loading: false,
                 loaded: false,
                 error: true
-            }
+            };
         default:
             return state
     }

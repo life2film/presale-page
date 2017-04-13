@@ -26,6 +26,6 @@ Tokens.propTypes = {
     balance: PropTypes.string,
     max: PropTypes.string,
     course: PropTypes.number
-}
+};
 
 export default Tokens;

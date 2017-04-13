@@ -10,15 +10,15 @@ const Title = ({ size, children }) => {
             {children}
         </Tag>
     )
-}
+};
 
 Title.defaultProps = {
     size: 'normal'
-}
+};
 
 Title.propTypes = {
     size: PropTypes.string,
     children: PropTypes.string
-}
+};
 
 export default Title;

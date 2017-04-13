@@ -30,13 +30,13 @@ const Address = (props) => {
             }
         </div>
     )
-}
+};
 
 Address.propTypes = {
     text: PropTypes.string,
     title: PropTypes.string,
     termsAccepted: PropTypes.bool,
     onBtnClick: PropTypes.func
-}
+};
 
 export default Address;

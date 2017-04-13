@@ -8,10 +8,10 @@ const Wrapper = ({ children }) => {
             {children}
         </div>
     )
-}
+};
 
 Wrapper.propTypes = {
     children: PropTypes.node
-}
+};
 
 export default Wrapper;

@@ -63,27 +63,27 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 ...payload
-            }
+            };
         case TRANSACTIONS_PENDING:
             return {
                 ...state,
                 loaded: false,
                 loading: true,
                 error: ''
-            }
+            };
         case TRANSACTIONS_FULLFILLED:
             return {
                 ...state,
                 loading: false,
                 loaded: true,
                 ...payload
-            }
+            };
         case TRANSACTIONS_REJECTED:
             return {
                 ...state,
                 loading: false,
                 ...payload
-            }
+            };
         default:
             return state
     }

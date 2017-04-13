@@ -10,7 +10,7 @@ export default class Question extends Component {
         id: PropTypes.number,
         openedId: PropTypes.number,
         onItemClick: PropTypes.func
-    }
+    };
 
     render() {
         const { text, popup, id, openedId, onItemClick } = this.props;

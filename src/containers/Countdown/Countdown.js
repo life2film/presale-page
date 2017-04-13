@@ -31,20 +31,20 @@ class Countdown extends PureComponent {
         timeLoaded: PropTypes.bool,
         finishSales: PropTypes.func,
         getTime: PropTypes.func
-    }
+    };
 
     state = {
         days: 0,
         hours: 0,
         minutes: 0,
         seconds: 0
-    }
+    };
 
     isDeadlineExpired = (date, now) => {
         const { format, timeZone } = deadline;
         const parsedDate = moment.tz(date, format, timeZone);
         return parsedDate.isBefore(now);
-    }
+    };
 
     countDiff = (date, now) => {
         const { finishSales, salesFinished } = this.props;
@@ -65,7 +65,7 @@ class Countdown extends PureComponent {
                 seconds: duration.seconds()
             });
         }
-    }
+    };
 
     componentWillMount() {
         const { getTime } = this.props;

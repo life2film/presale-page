@@ -1,7 +1,7 @@
 export default [
         {
         text: 'How to take part in the SONM preICO?',
-        popup: 'Deposits will be accepted in Ethereum (ETH) tokens with the rate of 1 ETH = 1212 SNM.</br>You can use any Ethereum wallet: <a href="https://ethereum.org">official Ethereum client</a>, <a href="https://github.com/ethereum/mist/releases">Mist</a>, <a href="https://parity.io/parity.html">Parity</a>, <a href="https://myetherwallet.com/">Myetherwallet.com</a>, <a href="https://jaxx.io">Jaxx</a> or any other wallet where you have access to the wallet private keys (<b>do not deposit to preICO using the cryptocurrency exchange account - you will nott have access your tokens!</b>). </br></br>Download and install the Ethereum client, backup the private key of your ethereum address before making a deposit to the preICO smart contract. </br>Send the desired ETH amount to the SONM preICO smart contract. You will receive SONM presale tokens (SPT) at the rate 606 SPT per 1 ETH. </br>SPT tokens will be migrated at the rate 1 SPT = 2 SNM at the start of main SNM tokens ICO'
+        popup: 'Deposits will be accepted in Ethereum (ETH) tokens with the rate of 1 ETH = 1212 SNM.</br>You can use any Ethereum wallet: <a href="https://ethereum.org" target="_blank">official Ethereum client</a>, <a href="https://github.com/ethereum/mist/releases" target="_blank">Mist</a>, <a href="https://parity.io/parity.html" target="_blank">Parity</a>, <a href="https://myetherwallet.com/" target="_blank">Myetherwallet.com</a>, <a href="https://jaxx.io" target="_blank">Jaxx</a> or any other wallet where you have access to the wallet private keys (<b>do not deposit to preICO using the cryptocurrency exchange account - you will nott have access your tokens!</b>). </br></br>Download and install the Ethereum client, backup the private key of your ethereum address before making a deposit to the preICO smart contract. </br>Send the desired ETH amount to the SONM preICO smart contract. You will receive SONM presale tokens (SPT) at the rate 606 SPT per 1 ETH. </br>SPT tokens will be migrated at the rate 1 SPT = 2 SNM at the start of main SNM tokens ICO'
     },
     {
         text: 'What are the benefits of early investing to SONM on presale?',
@@ -21,6 +21,6 @@ export default [
     },
     {
         text: 'Where can I find some details about SONM technical implementation / financial model / development roadmap and timeline?',
-        popup: 'Check our <a href="https://sonm.io/SONM_TECHNICAL_WP.pdf">Whitepaper</a> and <a href="https://sonm.io/Sonm-BusinessOverview.pdf">Business overview</a> on the www.sonm.io - you can find all the details there.'
+        popup: 'Check our <a href="https://sonm.io/SONM_TECHNICAL_WP.pdf" target="_blank">Whitepaper</a> and <a href="https://sonm.io/Sonm-BusinessOverview.pdf" target="_blank">Business overview</a> - you can find all the technical and financial details there.'
     }
 ]

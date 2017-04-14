@@ -1,8 +1,8 @@
 export default {
     title: '<b>Important!</b> Send ETH only using your own ethereum wallet!',
     text: [
-        'Do not send eth to presale address from any cryptocurrency exchange!',
-        '<b>if you send eth from exchange, you won\'t have access to your snm tokens.</b>',
-        'If you don\'t know how to install your own Ethereum wallet - <a href="#faq">check the FAQ</a> before the deposit.'
+        'Do not send Ethereum to presale address from any cryptocurrency exchange!',
+        '<b>if you send ETH from exchange, you won\'t have access to your SONM preICO SPT tokens.</b>',
+        'If you don\'t know how to install your own Ethereum wallet - <a href="#faq">check the FAQ</a> before the deposit.</br></br><b>Minimal preICO deposit amount is 0.5 ETH</b></br><b>Also, make sure you have enough ETH to pay the Ethereum transaction fee</b>'
     ]
 };

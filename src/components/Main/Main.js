@@ -24,7 +24,7 @@ const steps = [
     component: <Warning {...warning} />
   },
   {
-    title: "After Ethereum transaction confirmation <br /> SNM tokens will be credited to your ETH address",
+    title: "After Ethereum transaction confirmation <br /> preICO SPT tokens will be credited to your ETH address",
     component: <Transactions />
   }
 ];

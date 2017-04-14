@@ -1,15 +1,15 @@
 export default [
+        {
+        text: 'How to take part in the SONM preICO?',
+        popup: 'Deposits will be accepted in Ethereum (ETH) tokens with the rate of 1 ETH = 1212 SNM.</br>You can use any Ethereum wallet: <a href="https://ethereum.org">official Ethereum client</a>, <a href="https://github.com/ethereum/mist/releases">Mist</a>, <a href="https://parity.io/parity.html">Parity</a>, <a href="https://myetherwallet.com/">Myetherwallet.com</a>, <a href="https://jaxx.io">Jaxx</a> or any other wallet where you have access to the wallet private keys (<b>do not deposit to preICO using the cryptocurrency exchange account - you will nott have access your tokens!</b>). </br></br>Download and install the Ethereum client, backup the private key of your ethereum address before making a deposit to the preICO smart contract. </br>Send the desired ETH amount to the SONM preICO smart contract. You will receive SONM presale tokens (SPT) at the rate 606 SPT per 1 ETH. </br>SPT tokens will be migrated at the rate 1 SPT = 2 SNM at the start of main SNM tokens ICO'
+    },
     {
         text: 'What are the benefits of early investing to SONM on presale?',
-        popup: 'Presale investors get the SNM tokens with the 100% bonus. </br>1 preICO token migrate to 2 SNM tokens by the migrate function in the SONM ICO Ethereum smart contract after start of main SONM ICO crowdfunding (approximate date - 25/05/2017). </br>Pre-ICO tokens will be transferred into main SNM token ICO contract through special safe migration function.'
+        popup: 'Presale investors get the SNM tokens with the 100% bonus. </br>1 preICO token migrate to 2 SNM tokens by the migrate function in the SONM ICO Ethereum smart contract after start of main SONM ICO crowdfunding (approximate date - 25/05/2017). </br>SONM ICO token exchange rate will be 606 SNM per 1 ETH.</br>PreICO SNM tokens exchange rate is 1212 SNM per 1 ETH.</br>Pre-ICO tokens will be transferred into main SNM token ICO contract through special safe migration function.'
     },
     {
         text: 'Will you use an escrow for presale?',
         popup: 'Yes, SNM tokens presale will take place with SebastianJU bitcointalk.org escrow through Ethereum smart-contract. We will also use SebastianJU escrow service for the main SONM crowdsale. All the SONM preICO and ICO funds will be collected to the SebastianJU escrow Ethereum wallet '
-    },
-    {
-        text: 'How can I take part in the SONM preICO?',
-        popup: 'Deposits will be accepted in Ethereum (ETH) tokens with the rate of 1 ETH = 1212 SNM.</br>You can use any Ethereum wallet: official Ethereum client, Mist, Parity, Myetherwallet.com, Jaxx, et'
     },
     {
         text: 'What is the difference between SPT and SNM tokens?',
@@ -21,6 +21,6 @@ export default [
     },
     {
         text: 'Where can I find some details about SONM technical implementation / financial model / development roadmap and timeline?',
-        popup: 'Check our Whitepaper. You can find all the details there.'
+        popup: 'Check our Whitepaper and Business overview on the www.sonm.io - you can find all the details there.'
     }
 ]

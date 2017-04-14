@@ -21,6 +21,6 @@ export default [
     },
     {
         text: 'Where can I find some details about SONM technical implementation / financial model / development roadmap and timeline?',
-        popup: 'Check our Whitepaper and Business overview on the www.sonm.io - you can find all the details there.'
+        popup: 'Check our <a href="https://sonm.io/SONM_TECHNICAL_WP.pdf">Whitepaper</a> and <a href="https://sonm.io/Sonm-BusinessOverview.pdf">Business overview</a> on the www.sonm.io - you can find all the details there.'
     }
 ]

@@ -23,7 +23,7 @@ const links = [{
 const Transactions = ({ handleFormSubmit, handleAddressChange, address, loading, loaded, error, list }) => {
     return (
         <div className="transactions">
-            <p className="transactions__title">Enter your Ethereum address used for the deposit to check your SNM tokens balance:</p>
+            <p className="transactions__title">Enter your Ethereum address used for the deposit to check your SONM preICO SPT tokens balance:</p>
             <div className="transactions__form">
                 <Form
                     handleSubmit={handleFormSubmit}

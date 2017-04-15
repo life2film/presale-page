@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const TIMEDB_API_KEY = 'AH6WJ5KZ36JH';
-const TIMEDB_URL = 'http://api.timezonedb.com/v2/get-time-zone';
+const TIMEDB_URL = 'https://api.timezonedb.com/v2/get-time-zone';
 const ETHERSCAN_API_KEY = 'X6S8AYMKNU47DEYGKII5TRXUTZC342W35Y';
 const ETHERSCAN_URL = 'https://api.etherscan.io/api';
 

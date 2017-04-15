@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => ({
     handleFormSubmit: address => e => {
         e.preventDefault();
         if (address && address.length) {
-            dispatch(getTransactions(address));
+            const formattedAddress = String(address).toLowerCase();
+            dispatch(getTransactions(formattedAddress));
         }
     }
 });

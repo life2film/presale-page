@@ -1,5 +1,6 @@
 import { BALANCE_FULLFILLED } from '../ducks/balance';
 import { finishSales } from '../ducks/sales';
+import parseBalance from '../utils/parseBalance';
 import tokens from '../data/tokens';
 
 export default store => next => action => {
@@ -8,7 +9,7 @@ export default store => next => action => {
     if (type === BALANCE_FULLFILLED) {
         const { payload: { balance } } = action;
         const { max } = tokens;
-        if (String(balance) === String(max)) {
+        if (Number(parseBalance(balance)) >= Number(max)) {
             dispatch(finishSales());
         }
     }

@@ -1,0 +1,1 @@
+export default balance => parseFloat((balance * Math.pow(10, -18)).toFixed(4));

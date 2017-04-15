@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import TokensUI from '../../components/Tokens';
 import { connect } from 'react-redux';
 import { getBalance } from '../../ducks/balance';
+import parseBalance from '../../utils/parseBalance';
 
 import address from '../../data/address';
 import tokens from '../../data/tokens';
 
 
-const mapStateToProps = state => ({
-    balance: state.balance.balance,
-    balanceLoaded: state.balance.loaded,
-    finished: state.sales.finished
-});
+const mapStateToProps = state => {
+    const { balance, loaded: balanceLoaded } = state.balance;
+    const parsedBalance = parseBalance(balance);
+    return {
+        balance: parsedBalance,
+        balanceLoaded,
+        finished: state.sales.finished
+    }
+};
 
 
 class Tokens extends Component {

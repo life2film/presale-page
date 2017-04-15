@@ -20,8 +20,8 @@ const Row = ({ date, eth, snm, confirmed }) => {
 
 Row.propTypes = {
     date: PropTypes.string,
-    eth: PropTypes.number,
-    snm: PropTypes.number,
+    eth: PropTypes.string,
+    snm: PropTypes.string,
     confirmed: PropTypes.bool
 };
 

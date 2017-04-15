@@ -23,7 +23,7 @@ const Tokens = ({ balance, max, course }) => (
 );
 
 Tokens.propTypes = {
-    balance: PropTypes.number,
+    balance: PropTypes.string,
     max: PropTypes.string,
     course: PropTypes.number
 };

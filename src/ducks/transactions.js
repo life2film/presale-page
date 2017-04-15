@@ -41,7 +41,10 @@ export const getTransactions = address => dispatch => {
                 if (result.length === 0) {
                     dispatch(transactionsRejected('No transactions found'));
                 } else {
-                    const filteredTransactions = result.filter(item => item.from === address);
+                    const filteredTransactions = result.filter(item => {
+                        const { from, value } = item;
+                        return from === address && Number(value) > 0;
+                    });
                     if (filteredTransactions.length) {
                         dispatch(transactionsFullfilled(parseTransactions(filteredTransactions, course)));
                     } else {

@@ -9,13 +9,15 @@ import timeMiddleware from './middlewares/time';
 import * as reducers from './ducks';
 import App from './components/App';
 
+const DEV = process.env.NODE_ENV !== 'production';
+
 const store = createStore(
   combineReducers({
     ...reducers
   }),
   applyMiddleware(
     thunk,
-    logger(),
+    DEV && logger(),
     balanceMiddleware,
     timeMiddleware
   )

@@ -20,11 +20,11 @@ import "./Main.css";
 
 const steps = [
   {
-    title: "Send the desired ETH amount to presale smart contract address",
+    title: "Send the desired ETH amount to PreCrowdsale smart contract address",
     component: <Warning {...warning} />
   },
   {
-    title: "After Ethereum transaction confirmation <br /> preICO SPT tokens will be credited to your ETH address",
+    title: "After Ethereum transaction confirmation <br /> PreCrowdsale LIFE tokens will be credited to your ETH address",
     component: <Transactions />
   }
 ];
@@ -65,11 +65,11 @@ export default class Main extends PureComponent {
     return (
       <main className={cx("main", { main_loading: timeLoading })}>
         <div className="main__title">
-          <Title size="big">SONM tokens presale</Title>
+          <Title size="big">LIFE2FILM tokens PreCrowdsale</Title>
         </div>
         {salesFinished &&
           <div className="main__finish">
-            <Finish>SONM presale has finished</Finish>
+            <Finish>LIFE2FILM PreCrowdsale has finished</Finish>
           </div>}
         {!salesFinished &&
           <div className="main__wrapper">
@@ -83,8 +83,8 @@ export default class Main extends PureComponent {
             </div>
             <div className="main__address">
               <Address
-                title="SONM Presale smart contract address"
-                text="Show SONM Presale deposit address"
+                title="LIFE2FILM PreCrowdsale smart contract address"
+                text="Show LIFE2FILM PreCrowdsale deposit address"
                 onBtnClick={this.togglePopup}
                 termsAccepted={termsAccepted}
               />

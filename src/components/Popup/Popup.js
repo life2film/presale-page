@@ -31,7 +31,7 @@ export default class Popup extends Component {
                     className="popup__close"
                     onClick={onCloseClick}
                 />
-                <h4 className="popup__title">Accept SONM presale terms to continue</h4>
+                <h4 className="popup__title">Accept LIFE2FILM PreCrowdsale terms to continue</h4>
                 <div
                     className="popup__content"
                     dangerouslySetInnerHTML={{ __html: content }}
@@ -49,7 +49,7 @@ export default class Popup extends Component {
                     <div className="popup__btn">
                         <Button
                             type="submit"
-                            text="Show me presale deposit address"
+                            text="Show me PreCrowdsale deposit address"
                             disabled={!checked}
                             handleClick={onBtnClick}
                         />

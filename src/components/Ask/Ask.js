@@ -9,7 +9,7 @@ const Ask = () => {
     return (
         <div className="ask">
             <div className="ask__title">
-                <Title>Any questions on the SONM presale?</Title>
+                <Title>Any questions on the LIFE2FILM PreCrowdsale?</Title>
             </div>
             <p className="ask__text">Don't hesitate to ask us:</p>
             <div className="ask__socials">

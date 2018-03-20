@@ -9,7 +9,7 @@ const Faq = () => {
     return (
         <div className="faq">
             <div className="faq__title">
-                <Title>Presale FAQ:</Title>
+                <Title>PreCrowdsale FAQ:</Title>
             </div>
             <div className="faq__list">
                 <Questions list={faq} />

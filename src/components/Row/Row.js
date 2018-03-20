@@ -9,7 +9,7 @@ const Row = ({ date, eth, snm, confirmed }) => {
         <tr className="row">
             <td className={cx('row__cell')}>{date}</td>
             <td className={cx('row__cell')}>{eth} ETH</td>
-            <td className={cx('row__cell')}>{snm} SNM</td>
+            <td className={cx('row__cell')}>{snm} L2F</td>
             <td className={cx('row__cell', {
                 row__cell_accept: confirmed,
                 row__cell_decline: !confirmed

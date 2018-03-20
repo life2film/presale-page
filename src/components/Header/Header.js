@@ -11,7 +11,7 @@ const Header = () => {
                 <Logo />
             </div>
             <div className="header__link">
-                <Link text="Return to the main SONM website" />
+                <Link text="Return to the main LIFE2FILM website" />
             </div>
         </header>
     )

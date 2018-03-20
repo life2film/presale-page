@@ -6,7 +6,7 @@ import Success from '../Success';
 
 import './Transactions.css';
 
-const tableHead = ['Date', 'Ethereum amount', 'SONM tokens amount', 'Transaction status'];
+const tableHead = ['Date', 'Ethereum amount', 'LIFE2FILM tokens amount', 'Transaction status'];
 const links = [{
     url: 'https://etherscan.io/address/0xc8e3aa7718cf72f927b845d834be0b93c66b34e1#readContract',
     text: 'etherscan.io'
@@ -23,7 +23,7 @@ const links = [{
 const Transactions = ({ handleFormSubmit, handleAddressChange, address, loading, loaded, error, list }) => {
     return (
         <div className="transactions">
-            <p className="transactions__title">Enter your Ethereum address used for the deposit to check your SONM preICO SPT tokens balance:</p>
+            <p className="transactions__title">Enter your Ethereum address used for the deposit to check your LIFE2FILM PreCrowdsale LIFE tokens balance:</p>
             <div className="transactions__form">
                 <Form
                     handleSubmit={handleFormSubmit}

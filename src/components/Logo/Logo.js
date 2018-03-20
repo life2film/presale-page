@@ -12,7 +12,7 @@ const Logo = ({ big }) => {
         <div className='logo'>
             <img 
             src={src} 
-            alt="SONM"
+            alt="LIFE2FILM"
             className={cx('logo__image', {'logo__image_big': big})}
             />
         </div>

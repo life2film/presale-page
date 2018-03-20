@@ -1,6 +1,6 @@
 const deadline = {
-    end: '2017-04-25 17:00:00',
-    timeZone: 'Africa/Bissau',
+    end: '2018-05-21 00:00:00',
+    timeZone: 'Asia/Yekaterinburg',
     format: 'YYYY-MM-DD HH:mm:ss'
 };
 

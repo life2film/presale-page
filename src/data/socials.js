@@ -1,47 +1,33 @@
 export default [
-    {
-        icon: 'reddit.png',
-        text: 'Reddit',
-        url: 'https://www.reddit.com/r/ethereum/comments/5tjnaf/p2p_boinc_ethereum_multipleagent_systems/'
-    },
-    {
-        icon: 'bitcoin.png',
-        text: 'BitcoinTalk',
-        url: 'https://bitcointalk.org/index.php?topic=1845114.0'
-    },
+
     {
         icon: 'github.png',
         text: 'GitHub',
-        url: 'https://github.com/LIFE2FILM-io/'
-    },
-    {
-        icon: 'slack.png',
-        text: 'Slack',
-        url: 'https://LIFE2FILMio.signup.team/'
+        url: 'https://github.com/life2film/'
     },
     {
         icon: 'twitter.png',
         text: 'Twitter',
-        url: 'https://twitter.com/LIFE2FILMdevelopment'
+        url: 'https://twitter.com/life2film'
     },
     {
         icon: 'facebook.png',
         text: 'Facebook',
-        url: 'https://www.facebook.com/LIFE2FILM-Supercomputer-Organized-by-Network-Mining-954849207981204'
+        url: 'https://www.facebook.com/lifefilmtv'
     },
     {
-        icon: 'google.png',
-        text: 'Google Groups',
-        url: 'https://groups.google.com/forum/#!forum/LIFE2FILM---supercomputer-organized-by-network-mining'
+        icon: 'youtube.png',
+        text: 'Youtube',
+        url: 'https://www.youtube.com/channel/UCPMZ-9DVYDkWgCaOB05M3Ag'
     },
     {
         icon: 'telegram.png',
         text: 'Telegram',
-        url: 'https://t.me/joinchat/AAAAAAj5VObzTcja75XSTw'
+        url: 'https://t.me/life2film'
     },
     {
-        icon: 'medium.png',
-        text: 'Medium',
-        url: 'https://medium.com/@LIFE2FILM/'
+        icon: 'vk.png',
+        text: 'Vkontakte',
+        url: 'https://vk.com/life2film'
     }
 ];

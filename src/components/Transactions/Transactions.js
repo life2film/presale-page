@@ -8,7 +8,7 @@ import './Transactions.css';
 
 const tableHead = ['Date', 'Ethereum amount', 'LIFE2FILM tokens amount', 'Transaction status'];
 const links = [{
-    url: 'https://etherscan.io/address/0xc8e3aa7718cf72f927b845d834be0b93c66b34e1#readContract',
+    url: 'https://etherscan.io/address/0xDee02e16701f9cB31595724d37Ee5843131aD00f#readContract',
     text: 'etherscan.io'
 },
 {

@@ -1,6 +1,6 @@
 {
-  "name": "sonm",
-  "version": "0.1.0",
+  "name": "life2film",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "axios": "^0.15.3",
@@ -26,11 +26,11 @@
     "build-css": "node-sass src/ -o src/ --recursive",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "start": "PORT=3006 npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "now-start": "serve build/"
   },
-  "homepage": "http://sonm.io/preico/"
+  "homepage": "https://presale.life2film.com/"
 }

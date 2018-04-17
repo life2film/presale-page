@@ -4,12 +4,13 @@
   align-items: center;
   text-decoration: none;
   color: #0b1c26; }
-  .social__icon {
-    width: 57px;
-    height: 54px;
-    object-fit: none;
-    margin-bottom: 15px;
-    vertical-align: top; }
-  .social__text {
-    margin: 0;
-    font-size: 13px; }
+
+.social__icon {
+  width: 57px;
+  height: 54px;
+  margin-bottom: 15px;
+  vertical-align: top; }
+
+.social__text {
+  margin: 0;
+  font-size: 13px; }

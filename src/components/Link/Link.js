@@ -14,7 +14,7 @@ const Link = ({ url, text }) => {
 };
 
 Link.defaultProps = {
-    url: '/'
+    url: 'https://life2film.com'
 };
 
 Link.propTypes = {

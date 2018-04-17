@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import cx from 'classnames';
 
-import logo from '../../resources/images/logo.png';
+import logo from '../../resources/images/logo64.png';
 import logo_big from '../../resources/images/logo_big.png';
 
 import './Logo.css';
@@ -10,8 +10,8 @@ const Logo = ({ big }) => {
     const src = big ? logo_big : logo;
     return (
         <div className='logo'>
-            <img 
-            src={src} 
+            <img
+            src={src}
             alt="LIFE2FILM"
             className={cx('logo__image', {'logo__image_big': big})}
             />

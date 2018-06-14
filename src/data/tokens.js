@@ -1,4 +1,4 @@
 export default {
-    max: '1000000',
+    max: '10000000',
     course: 10000
 };

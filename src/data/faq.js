@@ -5,11 +5,11 @@ export default [
     },
     {
         text: 'How to check if my transaction has been completed?',
-        popup: 'You can check <a href="https://etherscan.io/address/0xDee02e16701f9cB31595724d37Ee5843131aD00f" target="_blank">the PreCrowdsale smart contract transactions list</a>:  </br> </br>If your transaction is in the list, but has the red exclamation mark - you have set not sufficient gas limit for the transaction.</br>The transaction will return to you soon.</br></br>After the ETH return you will need to send the ETH to PreCrowdsale smart contract once again with transaction gas limit set to 65000'
+        popup: 'You can check <a href="https://etherscan.io/address/0x1997E6672f8804941394e618026D0E140E0E911d" target="_blank">the PreCrowdsale smart contract transactions list</a>:  </br> </br>If your transaction is in the list, but has the red exclamation mark - you have set not sufficient gas limit for the transaction.</br>The transaction will return to you soon.</br></br>After the ETH return you will need to send the ETH to PreCrowdsale smart contract once again with transaction gas limit set to 65000'
     },
     {
         text: 'How to check PreCrowdsale tokens balance?',
-        popup: '1. You can check your PreCrowdsale tokens balance in <a href="https://etherscan.io/address/0xDee02e16701f9cB31595724d37Ee5843131aD00f" target="_blank">the smart contract admin panel</a> - enter your ETH address in the balanceOf field </br></br>2. Also, you can add the token in any Ethereum wallet like mew, parity, mist, myetherwallet.com to see the tokens balance:</br></br>Add ERC20 token with the following parameters:</br>- address -  0xDee02e16701f9cB31595724d37Ee5843131aD00f </br> - ticker - LIFE </br> - decimals - 18'
+        popup: '1. You can check your PreCrowdsale tokens balance in <a href="https://etherscan.io/address/0x1997E6672f8804941394e618026D0E140E0E911d" target="_blank">the smart contract admin panel</a> - enter your ETH address in the balanceOf field </br></br>2. Also, you can add the token in any Ethereum wallet like mew, parity, mist, myetherwallet.com to see the tokens balance:</br></br>Add ERC20 token with the following parameters:</br>- address -  0xDee02e16701f9cB31595724d37Ee5843131aD00f </br> - ticker - LIFE </br> - decimals - 18'
     },  
     {
         text: 'What are the benefits of early investing to LIFE2FILM on PreCrowdsale?',
